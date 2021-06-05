@@ -89,9 +89,14 @@ namespace CoreTools.Throws
             ExThrower.ThrowIfArgumentIsOutOfRange(arg, isOutRangeFunc, paramName, message);
         }
 
-        public static void ST_ThrowArgumentOutOfRangeException(Enum enumToGetNameValue, string paramName = null, string message = null)
+        public static void ST_ThrowArgumentOutOfRangeException(string paramName = null, string message = null)
         {
-            ExThrower.ThrowArgumentOutOfRangeException(Texting.Texting.GetNameValue(enumToGetNameValue), paramName, message);
+            ExThrower.ThrowArgumentOutOfRangeException(paramName, null, message);
+        }
+
+        public static void ST_ThrowArgumentOutOfRangeException(Enum enumToGetNameValue, string message = null)
+        {
+            ExThrower.ThrowArgumentOutOfRangeException(Texting.Texting.GetNameValue(enumToGetNameValue), enumToGetNameValue, message);
         }
 
         #endregion

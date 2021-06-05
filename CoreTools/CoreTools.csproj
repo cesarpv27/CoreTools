@@ -3,6 +3,20 @@
   <PropertyGroup>
     <!-- This project will output netstandard2.0 and net461 assemblies -->
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <PackageId>Miscellaneous.CoreTools</PackageId>
+    <Version>1.0.0.1</Version>
+    <Company>César Palomino Vila</Company>
+    <Authors>César Palomino Vila</Authors>
+    <Description>Contains and accumulates some base miscellaneous features that can help to develop other applications
+
+TargetFrameworks: netstandard2.0; net461</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/cesarpv27/CoreTools</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
 
 </Project>
