@@ -80,5 +80,10 @@ namespace CoreTools.Helpers
                 ReasonPhrase = reasonPhrase
             };
         }
+
+        public static bool EnumContains<Enu>(int value) where Enu : Enum
+        {
+            return Enum.IsDefined(typeof(Enu), value);
+        }
     }
 }
