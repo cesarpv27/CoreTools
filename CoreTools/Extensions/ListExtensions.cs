@@ -21,7 +21,8 @@ namespace CoreTools.Extensions
             if (source.Count - index < count)
                 ExThrower.ST_ThrowArgumentException("Number of items minus 'index' is less than 'count'");
 
-            for (int i = index; i < count; i++)
+            var length = index + count;
+            for (int i = index; i < length; i++)
                 dest.Add(source[i]);
         }
     }

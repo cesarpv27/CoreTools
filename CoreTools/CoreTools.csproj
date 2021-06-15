@@ -4,7 +4,7 @@
     <!-- This project will output netstandard2.0 and net461 assemblies -->
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <PackageId>Miscellaneous.CoreTools</PackageId>
-    <Version>1.0.0.4</Version>
+    <Version>1.0.0.5</Version>
     <Company>César Palomino Vila</Company>
     <Authors>César Palomino Vila</Authors>
     <Description>Contains and accumulates some base miscellaneous features that can help to develop other applications
