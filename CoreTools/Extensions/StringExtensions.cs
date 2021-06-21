@@ -22,5 +22,10 @@ namespace CoreTools.Extensions
         {
             return @this.Replace("\r", breakLineReplacement).Replace("\n", newLineReplacement);
         }
+
+        public static string AddLastChar(this string @this)
+        {
+            return @this + (char)255;
+        }
     }
 }
