@@ -85,5 +85,10 @@ namespace CoreTools.Helpers
         {
             return Enum.IsDefined(typeof(Enu), value);
         }
+
+        public static int ConvertToInt(HttpStatusCode httpStatusCode)
+        {
+            return (int)httpStatusCode;
+        }
     }
 }
