@@ -44,7 +44,7 @@ namespace CoreTools.Extensions
                 message += separator + exception.Message;
             }
             if (!string.IsNullOrEmpty(message))
-                message = message.ReplaceBreakLinesByNewLines();
+                message = message.ReplaceBreakLinesWithNewLines();
 
             return message;
         }
@@ -67,7 +67,7 @@ namespace CoreTools.Extensions
                 stackTrace += separator + exception.StackTrace;
             }
             if (!string.IsNullOrEmpty(stackTrace))
-                stackTrace = stackTrace.ReplaceBreakLinesByNewLines();
+                stackTrace = stackTrace.ReplaceBreakLinesWithNewLines();
 
             return stackTrace;
         }
