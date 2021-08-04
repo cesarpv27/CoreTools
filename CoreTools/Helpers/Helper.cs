@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ExThrower = CoreTools.Throws.ExceptionThrower;
 
 namespace CoreTools.Helpers
 {
@@ -89,6 +91,27 @@ namespace CoreTools.Helpers
         public static int ConvertToInt(HttpStatusCode httpStatusCode)
         {
             return (int)httpStatusCode;
+        }
+
+        public static Dictionary<string, string> GetNameValueProperties<T>(T obj, PropertyInfo[] objProperties)
+        {
+            ExThrower.ST_ThrowIfArgumentIsNull(obj, nameof(obj), $"'{nameof(obj)}' is null");
+            ExThrower.ST_ThrowIfArgumentIsNull(objProperties, nameof(objProperties), $"'{nameof(objProperties)}' is null");
+
+            if (objProperties.Length == 0)
+                ExThrower.ST_ThrowArgumentException(nameof(objProperties), "No properties found");
+
+            var nameValueProperties = new Dictionary<string, string>(objProperties.Length);
+            foreach (PropertyInfo _prop in objProperties)
+                try
+                {
+                    nameValueProperties.Add(_prop.Name, _prop.GetValue(obj).ToString());
+                }
+                catch
+                {
+                }
+
+            return nameValueProperties;
         }
     }
 }
