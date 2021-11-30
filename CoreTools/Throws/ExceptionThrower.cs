@@ -227,7 +227,7 @@ namespace CoreTools.Throws
         /// <exception cref="NotImplementedException">Throws <see cref="NotImplementedException"/>.</exception>
         public static void ST_ThrowNotImplementedException(Enum message)
         {
-            ST_ThrowNotImplementedException(Texting.Texting.GetNameValue(message));
+            ST_ThrowNotImplementedException(Text.TextProvider.GetNameValue(message));
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace CoreTools.Throws
         /// <exception cref="ArgumentOutOfRangeException">Throws <see cref="ArgumentOutOfRangeException"/>.</exception>
         public static void ST_ThrowArgumentOutOfRangeException(Enum actualValue, string message = null)
         {
-            ExThrower.ThrowArgumentOutOfRangeException(Texting.Texting.GetNameValue(actualValue), actualValue, message);
+            ExThrower.ThrowArgumentOutOfRangeException(Text.TextProvider.GetNameValue(actualValue), actualValue, message);
         }
 
         #endregion
